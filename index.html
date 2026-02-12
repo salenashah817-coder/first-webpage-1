@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Juan José Iglesias Dapena - Ciencia, Arte y Apicultura</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Fundación dedicada a la investigación científica, arte apicultura y protección de las abejas y la apicultura como Patrimonio Cultural Inmaterial.">
+    <meta name="keywords" content="abejas, apicultura, fundación, investigación científica, medio ambiente, biodiversidad, UNESCO, protección animal, conservación">
+    <meta name="author" content="Fundación Juan José Iglesias Dapena">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fundación Juan José Iglesias Dapena">
+    <meta property="og:description" content="Protegiendo las abejas y el medio ambiente a través de la ciencia, arte y apicultura .">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fundacionjjiglesiasdapena.org">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./image/logo.jpg" type="image/jpeg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- QR Code Library - davidshimjs/qrcodejs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <!-- No-JS Fallback -->
+    <noscript>
+        <style>
+            .page { display: block !important; }
+            .page:not(#home) { display: none !important; }
+            .mobile-menu-btn { display: none !important; }
+        </style>
+        <p class="nojs-warning">JavaScript está deshabilitado. Algunas funciones pueden no estar disponibles.</p>
+    </noscript>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <img src="./image/main.jpg" alt="Logo Fundación Juan José Iglesias Dapena">
+                    </div>
+                    <div class="logo-text">
+                        <h1>Fundación Juan José Iglesias Dapena</h1>
+                        <!-- <p>Ciencia, salud, medio ambiente y protección de las abejas</p> -->
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#" class="nav-link active" onclick="showPage('home', this)">Inicio</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('about', this)">Quiénes Somos</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('objectives', this)">Fines y Actividades</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('team', this)">Patronato</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('projects', this)">Proyectos</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('gallery', this)">Galería</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('blog', this)">Blog</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('survey', this)">Encuesta</a></li>
+                    <li><a href="#" class="nav-link" onclick="showPage('contact', this)">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="hero-section">
+                <div class="hero-images">
+                    <img src="./image/side-img.jpg" alt="" class="hero-img-left">
+                    <img src="./image/main.jpg" alt="Fundación Juan José Iglesias Dapena" class="hero-img-main">
+                    <img src="./image/side-img.jpg" alt="" class="hero-img-right">
+                </div>
+                <div class="hero-content">
+                    <!-- <h1 class="hero-title">Fundación Juan José Iglesias Dapena</h1>
+                    <p class="hero-subtitle">Ciencia, salud, medio ambiente y protección de las abejas al servicio de la sociedad</p> -->
+                </div>
+            </div>
+
+            <!-- Introduction Section -->
+            <div class="section-header">
+                <h2>PÁGINA PRINCIPAL</h2>
+                <p class="section-subtitle">Un legado para las generaciones presentes y futuras</p>
+            </div>
+            
+            <div class="intro-section">
+                <div class="intro-content">
+                    <p>La Fundación Juan José Iglesias Dapena es una entidad sin ánimo de lucro constituida para el beneficio del conjunto de la sociedad, con un firme compromiso con la investigación científica, arte y apicultura, el medio ambiente y, de manera especial, con la protección de las abejas y de la apicultura.</p>
+                    
+                    <p>La Fundación nace del interés altruista y del compromiso vital de D. Juan José Iglesias Dapena, una persona profundamente trabajadora que, ante la etapa final de su vida, decidió destinar su patrimonio personal a fines de interés general, dejando un legado duradero para las generaciones presentes y futuras.</p>
+                    
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-star"></i> Nuestro Primer Gran Objetivo</h3>
+                        <p>Contribuir decisivamente a la declaración de la apicultura como <strong>Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO</strong>, entendiendo la apicultura como una práctica milenaria esencial para la biodiversidad, la soberanía alimentaria y la identidad cultural de nuestros territorios.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Navigation Cards -->
+            <div class="quick-nav-section">
+                <h2 class="quick-nav-title">Acceso Rápido</h2>
+                <div class="quick-nav-grid">
+                    <div class="quick-nav-card" onclick="showPage('about', this)">
+                        <div class="quick-nav-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>Quiénes Somos</h3>
+                        <p>Conoce nuestra historia y misión</p>
+                    </div>
+                    <div class="quick-nav-card" onclick="showPage('projects', this)">
+                        <div class="quick-nav-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Nuestros Proyectos</h3>
+                        <p>Descubre nuestras iniciativas</p>
+                    </div>
+                    <div class="quick-nav-card" onclick="showPage('team', this)">
+                        <div class="quick-nav-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Patronato</h3>
+                        <p>Conoce a nuestro equipo</p>
+                    </div>
+                    <div class="quick-nav-card" onclick="showPage('contact', this)">
+                        <div class="quick-nav-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Contacto</h3>
+                        <p>Ponte en contacto con nosotros</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="gallery-section">
+                <h2 class="gallery-title">Nuestra Labor en Imágenes</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./image/16431.jpg" alt="Abejas trabajando en colmena" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Protección de la abeja ibérica</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./image/16438.jpg" alt="Apicultor trabajando" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Talleres de apicultura</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./image/science.jpg" alt="Investigación científica" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Investigación científica</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./image/16433.jpg" alt="Conservación ambiental" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Conservación ambiental</p>
+                        </div>
+                    </div>
+                    <!-- <div class="gallery-item">
+                        <img src="./image/16487.jpg" alt="Actividad de la Fundación" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Actividad y proyectos de la Fundación</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- Team Members Gallery -->
+            <div class="gallery-section">
+                <h2 class="gallery-title">Miembros del Patronato</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./image/Antonia.jpg" alt="Antonia Mª Crespo Gálvez" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Antonia Mª Crespo Gálvez - Presidenta</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./image/Juvenci.jpg" alt="Juvenci Portillo Araujo" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Juvenci Portillo Araujo - Secretario</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="image/juan.png" alt="Juan José Iglesias Dapena" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Juan José Iglesias Dapena - Tesorero</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./image/Enric.jpg" alt="Enric Simó Zaragoza" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Enric Simó Zaragoza - Vocal nº 1</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./image/Joaquim.jpg" alt="Joaquim Andrés Carrasco Sáez" class="gallery-img">
+                        <div class="gallery-caption">
+                            <p>Joaquim Andrés Carrasco Sáez - Vocal nº 2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="qr-section">
+                <h2 class="qr-title">Escanea para Compartir</h2>
+                <div class="qr-content">
+                    <div class="qr-code">
+                        <!-- Dynamic QR Code will be generated here -->
+                        <div id="qr-survey2" style="margin: 0 auto;">
+                            <div class="qr-code-placeholder">
+                                <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #f1c40f;"></i>
+                                <p>Generando código QR...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qr-info">
+                        <h3>Comparte Nuestra Misión</h3>
+                        <p>Escanea este código QR para acceder rápidamente a nuestro sitio web desde tu dispositivo móvil.</p>
+                        <p>Comparte nuestro enlace con amigos, familiares o colegas interesados en la protección de las abejas y el medio ambiente.</p>
+                        <button class="modern-btn" onclick="shareFoundation()">
+                            <i class="fas fa-share-alt"></i> Compartir Fundación
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Nuestros Pilares</h2>
+                <p class="section-subtitle">Tres áreas fundamentales que definen nuestro trabajo</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Investigación Científica</h3>
+                    <p>Promovemos la investigación científica, arte y apicultura en medio ambiente, con especial atención a la protección de las abejas y de la apicultura.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Protección de la Biodiversidad</h3>
+                    <p>Protegemos la abeja ibérica (Apis mellifera iberiensis) como subespecie autóctona de la península ibérica y su ecosistema.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Artes y Cultura</h3>
+                    <p>Apoyamos proyectos de artes y cultura destinados a una pluralidad de personas o colectivos, promoviendo la formación cultural.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <div class="section-header">
+                <h2>QUIÉNES SOMOS</h2>
+                <p class="section-subtitle">Conoce nuestra historia, valores y compromiso con la apicultura</p>
+            </div>
+
+            <div class="about-section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Nuestra razón de ser</h3>
+                        <p>La Fundación Juan José Iglesias Dapena trabaja para proteger la naturaleza, el conocimiento y los valores que sostienen una sociedad justa y sostenible. Creemos que la ciencia, la cultura y la solidaridad deben caminar juntas para generar un impacto real en arte y apicultura, en la conservación del medio ambiente y en la cohesión social.</p>
+                        <p>Especial relevancia adquiere la apicultura y la protección de la <strong>abeja ibérica (Apis mellifera iberiensis)</strong>, como eje donde convergen investigación científica, sostenibilidad ambiental y patrimonio cultural vivo.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="./image/Beewithflower.jpg" alt="Fundación trabajando en apicultura">
+                    </div>
+                </div>
+
+                <!-- History Section -->
+                <div class="history-section">
+                    <h3><i class="fas fa-history"></i> Origen y espíritu fundacional</h3>
+                    <p>La Fundación lleva el nombre de su fundador como reconocimiento a una vida de esfuerzo, responsabilidad y compromiso social. Su creación responde a la voluntad expresa de transformar un patrimonio individual en un instrumento colectivo de beneficio público, garantizando que dicho legado se oriente a fines científicos, culturales y sociales.</p>
+                </div>
+
+                <!-- Mission and Vision -->
+                <div class="mission-vision">
+                    <div class="mission-card">
+                        <h3><i class="fas fa-bullseye"></i> Nuestra Misión</h3>
+                        <p>Proteger y promover la apicultura como patrimonio cultural, científico y ambiental, fomentando la investigación, arte y apicultura y la cultura para el beneficio de la sociedad y el medio ambiente.</p>
+                    </div>
+                    <div class="vision-card">
+                        <h3><i class="fas fa-eye"></i> Nuestra Visión</h3>
+                        <p>Ser una fundación de referencia en la protección de la abeja ibérica y la apicultura, reconocida por su contribución al desarrollo sostenible, la investigación científica y la conservación del patrimonio cultural.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objectives Page -->
+        <div id="objectives" class="page">
+            <div class="section-header">
+                <h2>FINES Y ACTIVIDADES</h2>
+                <p class="section-subtitle">Los objetivos fundacionales que guían nuestra labor</p>
+            </div>
+
+            <!-- Fines Fundacionales -->
+            <div class="objectives-section">
+                <div class="statutes-box">
+                    <h3><i class="fas fa-file-contract"></i> Fines Fundacionales (Art. 5 de los Estatutos)</h3>
+                    <p>La Fundación persigue los siguientes fines:</p>
+                    
+                    <div class="objectives-grid">
+                        <div class="objective-card">
+                            <div class="objective-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h4>1. Investigación Científica</h4>
+                            <p>Favorecer la investigación científica en las ramas de arte y apicultura y del medio ambiente, con especial atención a la protección de las abejas y de la apicultura.</p>
+                        </div>
+                        
+                        <div class="objective-card">
+                            <div class="objective-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>2. Protección de la Abeja Ibérica</h4>
+                            <p>Proteger la abeja ibérica como subespecie autóctona de la península ibérica.</p>
+                        </div>
+                        
+                        <div class="objective-card">
+                            <div class="objective-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>3. Artes y Cultura</h4>
+                            <p>Apoyar proyectos de artes y cultura destinados a una pluralidad de personas o colectivos, promoviendo la formación cultural (música, ópera, literatura y otras disciplinas).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actividades de la Fundación -->
+                <div class="activities-section">
+                    <h3><i class="fas fa-tasks"></i> Actividades de la Fundación</h3>
+                    <p>Para el cumplimiento de sus fines, la Fundación puede desarrollar, entre otras, las siguientes actividades:</p>
+                    
+                    <div class="activities-list">
+                        <div class="activity-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Desarrollo del Plan de Salvaguarda de la Apicultura para su declaración como Patrimonio Cultural Inmaterial de la Humanidad.</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Organización de talleres y cursos de formación en apicultura, especialmente en el ámbito rural.</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Rescate de colmenas y enjambres.</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Apoyo a la explotación y mantenimiento de colmenas de terceros.</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Instalación y gestión de apiarios propios con fines científicos y formativos.</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Actividades forestales o agrícolas vinculadas a la apicultura.</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ejercicio de actividades económicas necesarias para el cumplimiento de los fines fundacionales.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Page -->
+        <div id="team" class="page">
+            <div class="section-header">
+                <h2>ORGANIGRAMA DEL PATRONATO</h2>
+                <p class="section-subtitle">El equipo directivo que guía nuestra labor</p>
+            </div>
+
+            <div class="team-section">
+                <div class="org-chart">
+                    <div class="org-header">
+                        <h3>Patronato de la Fundación</h3>
+                        <p>Es el órgano de gobierno y representación responsable de definir la estrategia y velar por el cumplimiento de los fines fundacionales.</p>
+                    </div>
+                    
+                    <!-- Team Members -->
+                    <div class="team-grid">
+                        <div class="team-member-card president">
+                            <div class="member-image">
+                                <img src="./image/Antonia.jpg" alt="Antonia Mª Crespo Gálvez">
+                            </div>
+                            <div class="member-info">
+                                <h4>Antonia Mª Crespo Gálvez</h4>
+                                <p class="member-role">Presidenta</p>
+                                <p class="member-description">Abogada con más de 24 años de ejercicio profesional. Representa legalmente a la Fundación.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member-card">
+                            <div class="member-image">
+                                <img src="./image/Juvenci.jpg" alt="Juvenci Portillo Araujo">
+                            </div>
+                            <div class="member-info">
+                                <h4>Juvenci Portillo Araujo</h4>
+                                <p class="member-role">Secretario</p>
+                                <p class="member-description">Diplomado en Ciencias Empresariales y formador en el ámbito empresarial.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member-card">
+                            <div class="member-image">
+                                <img src="image/juan.png" alt="Juan José Iglesias Dapena">
+                            </div>
+                            <div class="member-info">
+                                <h4>Juan José Iglesias Dapena</h4>
+                                <p class="member-role">Tesorero</p>
+                                <p class="member-description">Jubilado. Perito Mercantil. Profesional del transporte metropolitano privado en Barcelona.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member-card">
+                            <div class="member-image">
+                                <img src="./image/Enric.jpg" alt="Enric Simó Zaragoza">
+                            </div>
+                            <div class="member-info">
+                                <h4>Enric Simó Zaragoza</h4>
+                                <p class="member-role">Vocal nº 1</p>
+                                <p class="member-description">Apicultor, veterinario y biólogo, experto en apicultura.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member-card">
+                            <div class="member-image">
+                                <img src="./image/Joaquim.jpg" alt="Joaquim Andrés Carrasco Sáez">
+                            </div>
+                            <div class="member-info">
+                                <h4>Joaquim Andrés Carrasco Sáez</h4>
+                                <p class="member-role">Vocal nº 2</p>
+                                <p class="member-description">Jubilado. Estudios de Periodismo (UAB). Administrativo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Organizational Chart -->
+                    <div class="chart-container">
+                        <h3>Organigrama de la Fundación</h3>
+                        <div class="organigram">
+                            <div class="org-level">
+                                <div class="org-node main">
+                                    <h5>Patronato</h5>
+                                    <p>Órgano de gobierno</p>
+                                </div>
+                            </div>
+                            <div class="org-connector"></div>
+                            <div class="org-level">
+                                <div class="org-node">
+                                    <h5>Presidenta</h5>
+                                    <p>Antonia Mª Crespo Gálvez</p>
+                                </div>
+                                <div class="org-node">
+                                    <h5>Secretario</h5>
+                                    <p>Juvenci Portillo Araujo</p>
+                                </div>
+                                <div class="org-node">
+                                    <h5>Tesorero</h5>
+                                    <p>Sr. Juan Jose Iglesias Dapena</p>
+                                </div>
+                            </div>
+                            <div class="org-connector"></div>
+                            <div class="org-level">
+                                <div class="org-node">
+                                    <h5>Vocal 1</h5>
+                                    <p>Enric Simó Zaragoza</p>
+                                </div>
+                                <div class="org-node">
+                                    <h5>Vocal 2</h5>
+                                    <p>Joaquim Andrés Carrasco</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comisión Plan de Salvaguarda -->
+                    <div class="chart-container" style="margin-top: 40px;">
+                        <h3>Comisión Plan de Salvaguarda de la Apicultura</h3>
+                        <div class="commission-section">
+                            <p style="text-align: center; margin-bottom: 20px;">Comisión especializada para el desarrollo y seguimiento del Plan de Salvaguarda de la Apicultura como Patrimonio Cultural Inmaterial de la Humanidad.</p>
+                            <div class="team-grid" style="max-width: 900px; margin: 0 auto;">
+                                <div class="team-member-card">
+                                    <div class="member-info">
+                                        <h4>Enric Simó Zaragoza</h4>
+                                        <p class="member-role">Coordinador</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="team-member-card">
+                                    <div class="member-info">
+                                        <h4>Joaquim Andrés Carrasco Sáez</h4>
+                                        <p class="member-role">Miembro</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Page -->
+        <div id="projects" class="page">
+            <div class="section-header">
+                <h2>PROYECTOS DE LA FUNDACIÓN</h2>
+                <p class="section-subtitle">Iniciativas que transforman nuestra misión en acción</p>
+            </div>
+
+            <!-- Main Project -->
+            <div class="project-hero">
+                <div class="project-hero-content">
+                    <div class="project-badge">
+                        <span>Proyecto Prioritario</span>
+                    </div>
+                    <h2>Apicultura Patrimonio de la Humanidad</h2>
+                    <p>El primer gran proyecto de la Fundación consiste en prestar apoyo, supervisión y seguimiento al proceso iniciado años atrás por D. Enric Simó licenciado en Veterinaria por la Universidad de Zaragoza y en Biología por la Universidad de Valencia, orientado a lograr la declaración de la apicultura como Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO.</p>
+                </div>
+                <div class="project-hero-image">
+                    <img src="./image/16438.jpg" alt="Apicultura Patrimonio de la Humanidad">
+                </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="project-details">
+                <div class="project-milestone">
+                    <h3><i class="fas fa-trophy"></i> Hito Fundamental Alcanzado</h3>
+                    <p><strong>Real Decreto de 11 de marzo de 2025, núm. 199/2025, publicado en el BOE el 13 de marzo de 20253</strong>, por el que se declara la Apicultura en España como Manifestación Representativa del Patrimonio Cultural Inmaterial. Esta norma reconoce la importancia cultural, histórica y económica de la actividad apícola en España y supone un primer paso hacia su protección y salvaguarda. mediante la declaracion por la UNESCO de la Apicultura como Patrimonio Inmaterial de la Humanidad.</p>
+                </div>
+                
+                <div class="project-info">
+                    <h3><i class="fas fa-users"></i> Iniciativa Ciudadana</h3>
+                    <p>La iniciativa fue impulsada por Enric Simó Zaragoza, y contó con una amplia movilización social a través de una campaña en Change.org, que ha reunido más de 180.000 firmas de apoyo ciudadano.Para la tramitación del expediente ante el Ministerio de Cultura hemos contado con la inestimable colaboración de D. Joaquim Carrasco Sáez (estudios de periodismo) y de D. Albert Moncusí i Ferrer, (licenciado (1996) i Doctor (2002) en Antropología Social y Cultural por la Universidad Rovira i Virgili (Tarragona) y miembro numerario de la Sección de Filosofía i Ciencias Sociales del Instituto de Estudios Catalanes desde 2021), habiéndose ocupado este último de la elaboración del informe técnico que sirvió de fundamento para la aprobación de la <strong>Resolución de 7 de Noviembre de 2024 de la Dirección General de Patrimonio cultural y Bellas Artes, publicada en el BOE de 16 de noviembre de 2024</strong>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Page -->
+        <div id="blog" class="page">
+            <div class="section-header">
+                <h2>BLOG</h2>
+                <p class="section-subtitle">Un espacio de divulgación, reflexión y participación</p>
+            </div>
+
+            <div class="blog-intro">
+                <p>El blog de la Fundación es un espacio de divulgación, reflexión y participación, donde se publicarán:</p>
+            </div>
+
+            <div class="blog-content">
+                <div class="blog-list">
+                    <div class="blog-item">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Artículos científicos y divulgativos sobre abejas y apicultura.</span>
+                    </div>
+                    <div class="blog-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Noticias sobre biodiversidad, medio ambiente, arte y apicultura.</span>
+                    </div>
+                    <div class="blog-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Avances del Plan de Salvaguarda.</span>
+                    </div>
+                    <div class="blog-item">
+                        <i class="fas fa-comments"></i>
+                        <span>Opiniones de expertos, apicultores y entidades colaboradoras.</span>
+                    </div>
+                    <div class="blog-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Actividades, talleres y proyectos de la Fundación.</span>
+                    </div>
+                </div>
+                
+                <div class="blog-coming-soon">
+                    <h4><i class="fas fa-clock"></i> Blog en construcción</h4>
+                    <p>Estamos preparando contenido de calidad para nuestro blog. Pronto publicaremos artículos, noticias y actualizaciones sobre nuestros proyectos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Survey Page -->
+       <div id="survey" class="page">
+          <div class="section-header">
+             <h2>ENCUESTA DE LA FUNDACIÓN</h2>
+              <p class="section-subtitle">Participa en nuestro estudio sobre apicultura y productos apícolas</p>
+         </div>
+
+         <div class="survey-section">
+        <!-- External Survey Link Section -->
+        <div class="survey-card">
+            <div class="survey-card-header">
+                <div class="survey-badge">
+                    <span>Encuesta Principal</span>
+                </div>
+                <h3>10 Preguntas sobre Apicultura</h3>
+                <p class="survey-subtitle">Completa nuestra encuesta detallada</p>
+            </div>
+
+            <div class="survey-card-content" style="text-align: center; padding: 40px 20px;">
+                <!-- QR Code Container -->
+                <div id="qr-survey1" style="margin: 0 auto 25px; max-width: 250px;">
+                    <div class="qr-code-placeholder">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #f1c40f;"></i>
+                        <p>Generando código QR...</p>
+                    </div>
+                </div>
+                
+                <p style="margin-bottom: 18px; font-size: 1.1rem;">
+                    Escanea el código QR o haz clic en el botón para responder la encuesta.
+                </p>
+                <a href="encuesta.html" class="modern-btn" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; font-size: 1.1rem; text-decoration: none;">
+                    <i class="fas fa-external-link-alt"></i> Ir a la Encuesta
+                </a>
+                
+                <p style="margin-top: 16px; color: #666; font-size: 0.9rem;">
+                    <i class="fas fa-clock"></i> Tiempo estimado: 5-7 minutos
+                </p>
+            </div>
+        </div>
+
+        <!-- Basic Contact Form -->
+        <div class="survey-card" style="margin-top: 40px;">
+            <div class="survey-card-header">
+                <div class="survey-badge secondary">
+                    <span>Contacto Rápido</span>
+                </div>
+                <h3>Déjanos tus datos</h3>
+                <p class="survey-subtitle">Si deseas recibir información de la Fundación</p>
+            </div>
+
+            <div class="survey-card-content">
+                <form name="contact-simple" method="POST" data-netlify="true" netlify class="survey-form" style="max-width: 600px; margin: 0 auto;">
+                    <input type="hidden" name="form-name" value="contact-simple">
+
+                    <div class="form-group">
+                        <label for="contact-name">Nombre*</label>
+                        <input type="text" id="contact-name" name="name" class="form-control" placeholder="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-surname">Apellidos*</label>
+                        <input type="text" id="contact-surname" name="surname" class="form-control" placeholder="apellidos" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-email">Correo electrónico*</label>
+                        <input type="email" id="contact-email" name="email" class="form-control" placeholder="correo electrónico" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message">Mensaje (opcional)</label>
+                        <textarea id="contact-message" name="message" class="form-control" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="modern-btn">
+                            <i class="fas fa-paper-plane"></i> Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Gallery Page -->
+        <div id="gallery" class="page">
+            <div class="section-header">
+                <h2>GALERÍA DE FOTOS</h2>
+                <p class="section-subtitle">Descubre nuestro trabajo a través de imágenes</p>
+            </div>
+
+            <!-- Photo Upload Section -->
+            <div class="upload-section">
+                <div class="upload-container">
+                    <h3><i class="fas fa-camera"></i> Comparte tus fotos</h3>
+                    <p>¿Tienes fotos de nuestras actividades? ¡Súbelas aquí!</p>
+                    
+                    <form name="photo-upload" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="photo-upload-form">
+                        <input type="hidden" name="form-name" value="photo-upload">
+                        <p style="display: none;">
+                            <label>No llenes este campo si eres humano: <input name="bot-field"></label>
+                        </p>
+
+                        <div class="form-group">
+                            <label for="uploader-name">Tu nombre*</label>
+                            <input type="text" id="uploader-name" name="uploader_name" class="form-control" placeholder="Nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="uploader-email">Correo electrónico*</label>
+                            <input type="email" id="uploader-email" name="uploader_email" class="form-control" placeholder="correo electrónico" required>
+                        </div>
+
+                        <div class="upload-input-group" style="margin: 20px 0;">
+                            <input type="file" id="photoInput" name="photo" accept="image/*" class="upload-input" required>
+                            <label for="photoInput" class="upload-label">
+                                <span class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></span>
+                                <span class="upload-text">
+                                    <span class="upload-title">Seleccionar archivo</span>
+                                    <span class="upload-subtitle">o arrastra la foto aqui</span>
+                                    <span class="upload-hint">(JPG, PNG, GIF - Maximo 5MB)</span>
+                                </span>
+                                <!-- <span class="upload-button">Elegir archivo</span> -->
+                            </label>
+                            <div class="upload-preview is-empty" id="uploadPreview">
+                                <span class="upload-preview-thumb">
+                                    <img id="uploadPreviewImg" alt="Vista previa" />
+                                </span>
+                                <span class="upload-preview-meta">
+                                    <span id="uploadPreviewName">Ningun archivo seleccionado</span>
+                                    <span id="uploadPreviewSize"></span>
+                                </span>
+                                <button type="button" class="remove-photo-btn" id="removePhotoBtn" title="Eliminar foto">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="photoTitle">Título de la foto (opcional)</label>
+                            <input type="text" id="photoTitle" name="photo_title" class="form-control" placeholder="Título descriptivo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="photoCategory">Categoría</label>
+                            <select id="photoCategory" name="photo_category" class="form-control">
+                                <option value="">Selecciona una categoría</option>
+                                <option value="abejas">Abejas</option>
+                                <option value="investigacion">Investigación</option>
+                                <option value="eventos">Eventos</option>
+                                <option value="conservacion">Conservación</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="modern-btn upload-btn">
+                            <i class="fas fa-upload"></i> Subir Foto
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="gallery-page-container">
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="abejas">Abejas</button>
+                    <button class="filter-btn" data-filter="investigacion">Investigación</button>
+                    <button class="filter-btn" data-filter="eventos">Eventos</button>
+                    <button class="filter-btn" data-filter="conservacion">Conservación</button>
+                </div>
+
+                <div class="gallery-grid-full">
+                    <div class="gallery-item-full" data-category="abejas">
+                        <img src="./image/16431.jpg" alt="Abejas en colmena" class="gallery-img-full">
+                        <div class="gallery-overlay">
+                            <p>Protección de la Abeja Ibérica</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-full" data-category="abejas">
+                        <img src="./image/16438.jpg" alt="Apicultor trabajando" class="gallery-img-full">
+                        <div class="gallery-overlay">
+                            <p>Trabajo en Apiarios</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-full" data-category="investigacion">
+                        <img src="./image/science.jpg" alt="Investigación científica" class="gallery-img-full">
+                        <div class="gallery-overlay">
+                            <p>Investigación Científica</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-full" data-category="conservacion">
+                        <img src="./image/16433.jpg" alt="Conservación ambiental" class="gallery-img-full">
+                        <div class="gallery-overlay">
+                            <p>Conservación Ambiental</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-full" data-category="eventos">
+                        <img src="./image/Antonia.jpg" alt="Evento de la Fundación" class="gallery-img-full">
+                        <div class="gallery-overlay">
+                            <p>Evento Fundacional</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item-full" data-category="eventos">
+                        <img src="./image/Juvenci.jpg" alt="Actividad comunitaria" class="gallery-img-full">
+                        <div class="gallery-overlay">
+                            <p>Actividades Comunitarias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="section-header">
+                <h2>CONTACTO Y COLABORACIÓN</h2>
+                <p class="section-subtitle">Únete a nuestra misión en favor de la vida, la cultura y el medio ambiente</p>
+            </div>
+
+            <div class="contact-section">
+                <div class="contact-intro">
+                    <p>La Fundación Juan José Iglesias Dapena invita a personas, entidades públicas y privadas a colaborar, investigar y participar en sus proyectos, sumando esfuerzos en favor de la vida, la cultura y el medio ambiente.</p>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-container" style="max-width: 600px; margin: 0 auto;">
+                    <h3>Información de contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Correo electrónico</h4>
+                                <p>iglesiasdapenafundacion@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Dirección</h4>
+                                <p>Fundación Juan José Iglesias Dapena</p>
+                                <p>Barcelona, España</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4>Formas de colaborar</h4>
+                                <p>Donaciones, voluntariado, proyectos conjuntos, difusión</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo-modern">Fundación <span>J.J.I.D.</span></div>
+                    <p class="footer-text-modern">
+                        Protegiendo las abejas y el medio ambiente a través de la investigación científica, arte y apicultura y la cultura.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-heading-modern">Enlaces rápidos</h4>
+                    <ul class="footer-links-modern">
+                        <li><a href="#" onclick="showPage('home', this)">Inicio</a></li>
+                        <li><a href="#" onclick="showPage('about', this)">Quiénes Somos</a></li>
+                        <li><a href="#" onclick="showPage('objectives', this)">Fines y Actividades</a></li>
+                        <li><a href="#" onclick="showPage('team', this)">Patronato</a></li>
+                        <li><a href="#" onclick="showPage('projects', this)">Proyectos</a></li>
+                        <li><a href="#" onclick="showPage('gallery', this)">Galería</a></li>
+                        <li><a href="#" onclick="showPage('blog', this)">Blog</a></li>
+                        <li><a href="#" onclick="showPage('survey', this)">Encuesta</a></li>
+                        <li><a href="#" onclick="showPage('contact', this)">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading-modern">Contacto</h4>
+                    <p>iglesiasdapenafundacion@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright-modern">
+                <p>© 2026 Fundación Juan José Iglesias Dapena. Todos los derechos reservados.</p>
+                <p>Ciencia, arte y apicultura, medio ambiente y protección de las abejas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
