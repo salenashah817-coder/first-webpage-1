@@ -493,7 +493,7 @@ function setupKeyboardNavigation() {
 function shareFoundation() {
     console.log('Share button clicked!'); // Debug log
     
-    const url = 'https://fundacionjjiglesiasdapena.org';
+    const url = 'https://fundacionjjid.org';
     const title = 'Fundación Juan José Iglesias Dapena';
     const text = 'Descubre la Fundación Juan José Iglesias Dapena - Protegiendo las abejas y el medio ambiente.';
     
