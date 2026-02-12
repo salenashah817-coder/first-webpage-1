@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta - Fundacion J.J.I.D.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./image/logo.jpg" type="image/jpeg">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            // Initialize EmailJS with your public key
+            // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+            emailjs.init('YOUR_PUBLIC_KEY');
+        })();
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-text">
+                <h1>Encuesta - Fundacion J.J.I.D.</h1>
+                <p>Ciencia, salud, medio ambiente y proteccion de las abejas</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 40px 20px; max-width: 900px; margin: 0 auto;">
+        <div class="section-header">
+            <h2>Encuesta sobre Apicultura</h2>
+            <p class="section-subtitle">Responde las 10 preguntas para ayudarnos a mejorar el sitio y la labor de la Fundacion.</p>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <!-- 
+                BACKEND EMAIL SETUP - Sends emails directly using your own server
+                No third-party services needed!
+            -->
+            <form name="encuesta-apicultura" 
+                  id="encuesta-form"
+                  method="POST" 
+                  class="survey-form">
+                <input type="hidden" name="form-name" value="encuesta-apicultura">
+                
+                <div class="form-group">
+                    <label>1. Como fue tu experiencia visitando nuestro sitio web?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_experience_1" name="q_experience" value="excellent" required style="margin-right:8px;"> Excelente</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_experience_2" name="q_experience" value="good" style="margin-right:8px;"> Buena</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_experience_3" name="q_experience" value="fair" style="margin-right:8px;"> Aceptable</label>
+                    <label style="display:flex; align-items:center;"><input type="radio" id="q_experience_4" name="q_experience" value="poor" style="margin-right:8px;"> Necesita mejorar</label>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Cuales de estas secciones visitaste? (puedes seleccionar varias)*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_1" name="q_sections" value="about" style="margin-right:8px;"> Quienes Somos</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_2" name="q_sections" value="projects" style="margin-right:8px;"> Proyectos</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_3" name="q_sections" value="gallery" style="margin-right:8px;"> Galeria</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_4" name="q_sections" value="team" style="margin-right:8px;"> Patronato</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_5" name="q_sections" value="objectives" style="margin-right:8px;"> Fines y Actividades</label>
+                    <label style="display:flex; align-items:center;"><input type="checkbox" id="q_sections_6" name="q_sections" value="blog" style="margin-right:8px;"> Blog</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="q_reason">3. Que te llevo a visitar nuestro sitio web? (respuesta breve)</label>
+                    <input type="text" id="q_reason" name="q_reason" class="form-control" placeholder="Ej.: aprender sobre apicultura, conocer la fundacion, participar...">
+                </div>
+
+                <div class="form-group">
+                    <label>4. Que tipo de contenido te gustaria ver mas? (puedes seleccionar varias)*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_content_1" name="q_content" value="articles" style="margin-right:8px;"> Articulos cientificos</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_content_2" name="q_content" value="videos" style="margin-right:8px;"> Videos educativos</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_content_3" name="q_content" value="events" style="margin-right:8px;"> Eventos y talleres</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_content_4" name="q_content" value="news" style="margin-right:8px;"> Noticias y actualizaciones</label>
+                    <label style="display:flex; align-items:center;"><input type="checkbox" id="q_content_5" name="q_content" value="research" style="margin-right:8px;"> Investigaciones</label>
+                </div>
+
+                <div class="form-group">
+                    <label>5. Que tan facil fue navegar por el sitio?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_navigation_1" name="q_navigation" value="very_easy" required style="margin-right:8px;"> Muy facil</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_navigation_2" name="q_navigation" value="easy" style="margin-right:8px;"> Facil</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_navigation_3" name="q_navigation" value="difficult" style="margin-right:8px;"> Dificil</label>
+                    <label style="display:flex; align-items:center;"><input type="radio" id="q_navigation_4" name="q_navigation" value="very_difficult" style="margin-right:8px;"> Muy dificil</label>
+                </div>
+
+                <div class="form-group">
+                    <label>6. Encontraste la informacion que buscabas?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_found_info_1" name="q_found_info" value="yes" required style="margin-right:8px;"> Si, completamente</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_found_info_2" name="q_found_info" value="partial" style="margin-right:8px;"> Parcialmente</label>
+                    <label style="display:flex; align-items:center;"><input type="radio" id="q_found_info_3" name="q_found_info" value="no" style="margin-right:8px;"> No</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="q_impression">7. Cual fue tu impresion general sobre la Fundacion? (respuesta breve)</label>
+                    <textarea id="q_impression" name="q_impression" rows="2" class="form-control" placeholder="Cuentanos tu perspectiva..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>8. Volverias a visitar nuestro sitio en el futuro?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_return_1" name="q_return" value="definitely" required style="margin-right:8px;"> Definitivamente si</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_return_2" name="q_return" value="probably" style="margin-right:8px;"> Probablemente</label>
+                    <label style="display:flex; align-items:center;"><input type="radio" id="q_return_3" name="q_return" value="unlikely" style="margin-right:8px;"> Poco probable</label>
+                </div>
+
+                <div class="form-group">
+                    <label>9. Que aspecto de la apicultura te interesa mas?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_interest_1" name="q_interest" value="conservation" required style="margin-right:8px;"> Conservacion y biodiversidad</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_interest_2" name="q_interest" value="science" style="margin-right:8px;"> Investigacion cientifica</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_interest_3" name="q_interest" value="practice" style="margin-right:8px;"> Practica y tecnicas</label>
+                    <label style="display:flex; align-items:center;"><input type="radio" id="q_interest_4" name="q_interest" value="culture" style="margin-right:8px;"> Patrimonio cultural</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="q_improve">10. Hay algo que podriamos mejorar en el sitio? (respuesta breve)</label>
+                    <textarea id="q_improve" name="q_improve" rows="2" class="form-control" placeholder="Sugerencias, comentarios..."></textarea>
+                </div>
+
+                <div class="form-group" style="border-top: 2px solid #f1c40f; padding-top: 20px; margin-top: 20px;">
+                    <label for="respondent_email">Tu correo electrónico (opcional)</label>
+                    <input type="email" id="respondent_email" name="respondent_email" class="form-control" placeholder="correo@ejemplo.com">
+                    <small style="color: #666; font-size: 0.85rem;">
+                        <i class="fas fa-info-circle"></i> Solo si deseas que te contactemos sobre tus respuestas
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="respondent_name">Tu nombre (opcional)</label>
+                    <input type="text" id="respondent_name" name="respondent_name" class="form-control" placeholder="Nombre y apellidos">
+                </div>
+
+                <div style="text-align: center; margin-top: 16px;">
+                    <button type="submit" class="modern-btn"><i class="fas fa-paper-plane"></i> Enviar Encuesta</button>
+                </div>
+            </form>
+
+            <p style="text-align: center; margin-top: 18px;"><a href="index.html#survey" class="modern-btn" style="padding: 8px 14px;"><i class="fas fa-arrow-left"></i> Volver a Encuesta</a></p>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="encuesta-emailjs.js"></script>
+</body>
+</html>
