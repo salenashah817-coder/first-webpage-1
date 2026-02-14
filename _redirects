@@ -1,3 +1,5 @@
 # Netlify redirects to consolidate old domain to canonical
 http://fundacionjjiglesiasdapena.org/* https://fundacionjjid.org/:splat 301!
 https://fundacionjjiglesiasdapena.org/* https://fundacionjjid.org/:splat 301!
+http://www.fundacionjjid.org/* https://fundacionjjid.org/:splat 301!
+https://www.fundacionjjid.org/* https://fundacionjjid.org/:splat 301!
