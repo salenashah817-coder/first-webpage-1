@@ -1,10 +1,8 @@
-// ===== FORM HANDLING WITH FORMSPREE =====
 function setupForms() {
     const contactForm = document.querySelector('.contact-form');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
-            // Basic validation
             const name = document.getElementById('contact-name')?.value?.trim() || '';
             const email = document.getElementById('contact-email')?.value?.trim() || '';
             const subject = document.getElementById('contact-subject')?.value || '';
@@ -16,7 +14,6 @@ function setupForms() {
                 return false;
             }
             
-            // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 alert('Por favor, introduzca una dirección de correo electrónico válida.');
@@ -24,25 +21,19 @@ function setupForms() {
                 return false;
             }
             
-            // Show loading message
             const submitButton = this.querySelector('button[type="submit"]');
             if (submitButton) {
                 const originalText = submitButton.innerHTML;
                 submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
                 submitButton.disabled = true;
-                
-                // Formspree will handle the submission automatically
-                // After successful submission, it redirects or shows a message
             }
             
-            return true; // Allow Formspree to submit
+            return true;
         });
-        
-        // Handle Formspree success response
+
         contactForm.addEventListener('submit', function() {
             setTimeout(() => {
                 if (contactForm.style.display === 'none') {
-                    // Formspree shows a success message by default
                     showSuccessMessage('¡Mensaje enviado con éxito! Te responderemos en breve.');
                     contactForm.reset();
                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -52,7 +43,6 @@ function setupForms() {
     }
 }
 
-// ===== Show success message =====
 function showSuccessMessage(message) {
     const alertDiv = document.createElement('div');
     alertDiv.className = 'form-success-alert';
@@ -65,7 +55,6 @@ function showSuccessMessage(message) {
     }, 5000);
 }
 
-// ===== PHOTO CHOOSER PREVIEW =====
 function setupPhotoChooser() {
     const input = document.getElementById('photoInput');
     const preview = document.getElementById('uploadPreview');
@@ -82,7 +71,7 @@ function setupPhotoChooser() {
         previewImg.style.display = 'none';
         previewName.textContent = 'Ningun archivo seleccionado';
         previewSize.textContent = '';
-        input.value = ''; // Clear the file input
+        input.value = '';
     };
 
     input.addEventListener('change', () => {
@@ -104,7 +93,6 @@ function setupPhotoChooser() {
         reader.readAsDataURL(file);
     });
 
-    // Remove button click handler
     if (removeBtn) {
         removeBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -116,7 +104,6 @@ function setupPhotoChooser() {
     setEmpty();
 }
 
-// ===== GALLERY FILTERS =====
 function setupGalleryFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const items = document.querySelectorAll('.gallery-item-full');
@@ -152,46 +139,37 @@ function formatFileSize(bytes) {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
 }
 
-// ===== PAGE NAVIGATION =====
 function showPage(pageId, element) {
-    // Hide all pages
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => {
         page.classList.remove('active');
     });
     
-    // Remove active from all nav links
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.classList.remove('active');
     });
     
-    // Show selected page
     const targetPage = document.getElementById(pageId);
     if (targetPage) {
         targetPage.classList.add('active');
     }
     
-    // Add active to clicked link
     if (element && element.classList.contains('nav-link')) {
         element.classList.add('active');
     }
     
-    // Close mobile menu
     const navLinksContainer = document.getElementById('navLinks');
     if (navLinksContainer && navLinksContainer.classList.contains('active')) {
         navLinksContainer.classList.remove('active');
     }
     
-    // Scroll to top smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
-    // Update URL without page reload (for bookmarking)
     const newUrl = window.location.origin + window.location.pathname + '#' + pageId;
     window.history.pushState({page: pageId}, '', newUrl);
 }
 
-// ===== MOBILE MENU =====
 function setupMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
@@ -203,7 +181,6 @@ function setupMobileMenu() {
             this.classList.toggle('active');
         });
         
-        // Close menu when clicking a link
         const mobileLinks = navLinks.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -212,7 +189,6 @@ function setupMobileMenu() {
             });
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
                 navLinks.classList.remove('active');
@@ -220,7 +196,6 @@ function setupMobileMenu() {
             }
         });
         
-        // Close menu on Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
@@ -230,12 +205,10 @@ function setupMobileMenu() {
     }
 }
 
-// ===== IMAGE LOADING FALLBACK =====
 function setupImageFallbacks() {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
         img.addEventListener('error', function() {
-            // If image fails to load, show a placeholder
             if (this.classList.contains('member-image') || this.classList.contains('gallery-img')) {
                 this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f0f0f0"/><text x="200" y="150" font-family="Arial" font-size="16" text-anchor="middle" fill="%23666">Imagen no disponible</text></svg>';
             }
@@ -243,16 +216,13 @@ function setupImageFallbacks() {
     });
 }
 
-// ===== QR CODE GENERATION (UNIFIED) =====
 function setupQRCodeGeneration(retryCount = 0) {
     console.log('setupQRCodeGeneration called, retry count:', retryCount);
     console.log('QRCode available?', typeof QRCode !== 'undefined');
     
-    // Get the complete URL for the survey
     const baseUrl = window.location.origin + window.location.pathname.replace('index.html', '');
     const surveyUrl = baseUrl + 'encuesta.html';
     
-    // QR code data configuration
     const surveyQRData = {
         survey1: {
             title: "Encuesta sobre Apicultura",
@@ -266,11 +236,9 @@ function setupQRCodeGeneration(retryCount = 0) {
         }
     };
 
-    // Check if QR code library is available
     if (typeof QRCode !== 'undefined' && QRCode) {
         console.log('QRCode library loaded successfully! Generating QR codes...');
         try {
-            // Generate QR codes dynamically
             const qrContainers = document.querySelectorAll('.qr-code-placeholder, #qr-survey1, #qr-survey2');
             console.log('Found QR containers:', qrContainers.length);
             
@@ -280,7 +248,6 @@ function setupQRCodeGeneration(retryCount = 0) {
             }
             
             qrContainers.forEach((container, index) => {
-                // Determine which QR this is for
                 let surveyKey;
                 const containerId = container.id || '';
                 const containerText = container.textContent.toLowerCase();
@@ -294,18 +261,15 @@ function setupQRCodeGeneration(retryCount = 0) {
                 const data = surveyQRData[surveyKey];
                 
                 if (data) {
-                    // Get or create parent container
                     const parent = container.parentElement || container;
                     const isExistingContainer = container.id && container.id.startsWith('qr-');
                     
-                    // Clear container content
                     if (!isExistingContainer) {
                         parent.innerHTML = '';
                     } else {
                         container.innerHTML = '';
                     }
                     
-                    // Create QR code container
                     const qrDiv = document.createElement('div');
                     qrDiv.id = `qrcode-${surveyKey}-${index}`;
                     qrDiv.className = 'generated-qrcode';
@@ -313,7 +277,6 @@ function setupQRCodeGeneration(retryCount = 0) {
                     const targetContainer = isExistingContainer ? container : parent;
                     targetContainer.appendChild(qrDiv);
                     
-                    // Generate QR code
                     try {
                         new QRCode(qrDiv, {
                             text: data.url,
@@ -324,19 +287,16 @@ function setupQRCodeGeneration(retryCount = 0) {
                             correctLevel: QRCode.CorrectLevel.H
                         });
                         
-                        // Add title below QR code
                         const title = document.createElement('p');
                         title.textContent = data.title;
                         title.className = 'qr-title';
                         targetContainer.appendChild(title);
                         
-                        // Add URL info
                         const urlInfo = document.createElement('p');
                         urlInfo.className = 'qr-url-info';
                         urlInfo.innerHTML = `<small><i class="fas fa-link"></i> ${data.description}</small>`;
                         targetContainer.appendChild(urlInfo);
                         
-                        // Add download button
                         const downloadBtn = document.createElement('button');
                         downloadBtn.className = 'modern-btn small qr-download-btn';
                         downloadBtn.innerHTML = '<i class="fas fa-download"></i> Descargar QR';
@@ -351,7 +311,6 @@ function setupQRCodeGeneration(retryCount = 0) {
                         
                     } catch (error) {
                         console.error('Error generating QR code:', error);
-                        // Fallback to placeholder
                         targetContainer.innerHTML = `
                             <div class="qr-placeholder-content">
                                 <i class="fas fa-qrcode"></i>
@@ -373,19 +332,16 @@ function setupQRCodeGeneration(retryCount = 0) {
             showQRCodeFallback();
         }
     } else {
-        // QRCode library not loaded yet, retry up to 5 times
         if (retryCount < 5) {
             console.log(`QRCode library not ready yet. Retrying... (${retryCount + 1}/5)`);
             setTimeout(() => setupQRCodeGeneration(retryCount + 1), 300);
         } else {
-            // After 5 retries, show fallback
             console.warn('QRCode library not available after retries. Showing fallback.');
             showQRCodeFallback();
         }
     }
 }
 
-// Function to download QR code as image
 function downloadQRCode(qrElementId, url, title) {
     const qrElement = document.getElementById(qrElementId);
     if (!qrElement) {
@@ -396,14 +352,12 @@ function downloadQRCode(qrElementId, url, title) {
     const canvas = qrElement.querySelector('canvas');
     if (canvas) {
         try {
-            // Create download link
             const link = document.createElement('a');
             const fileName = title.toLowerCase().replace(/[^a-z0-9]/g, '-');
             link.download = `qrcode-${fileName}-fundacion-jjid.png`;
             link.href = canvas.toDataURL('image/png');
             link.click();
             
-            // Show success message
             console.log('QR Code descargado exitosamente');
         } catch (error) {
             console.error('Error downloading QR code:', error);
@@ -414,7 +368,6 @@ function downloadQRCode(qrElementId, url, title) {
     }
 }
 
-// Fallback for when QR code library isn't available
 function showQRCodeFallback() {
     const baseUrl = window.location.origin + window.location.pathname.replace('index.html', '');
     const surveyUrl = baseUrl + 'encuesta.html';
@@ -440,7 +393,6 @@ function showQRCodeFallback() {
     });
 }
 
-// ===== FORM VALIDATION HELPERS =====
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -453,10 +405,8 @@ function sanitizeInput(input) {
         .trim();
 }
 
-// ===== KEYBOARD NAVIGATION =====
 function setupKeyboardNavigation() {
     document.addEventListener('keydown', function(e) {
-        // Close menu on Escape key
         if (e.key === 'Escape') {
             const navLinks = document.getElementById('navLinks');
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -466,7 +416,6 @@ function setupKeyboardNavigation() {
             }
         }
         
-        // Navigate with arrow keys between pages (optional feature)
         if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
             const pages = ['home', 'about', 'objectives', 'team', 'projects', 'survey', 'blog', 'contact'];
             const currentPage = document.querySelector('.page.active').id;
@@ -489,15 +438,13 @@ function setupKeyboardNavigation() {
     });
 }
 
-// ===== SHARE FOUNDATION =====
 function shareFoundation() {
-    console.log('Share button clicked!'); // Debug log
+    console.log('Share button clicked!');
     
     const url = 'https://fundacionjjid.org';
     const title = 'Fundación Juan José Iglesias Dapena';
     const text = 'Descubre la Fundación Juan José Iglesias Dapena - Protegiendo las abejas y el medio ambiente.';
     
-    // Try native Web Share API first (for mobile devices)
     if (navigator.share) {
         navigator.share({
             title: title,
@@ -507,28 +454,24 @@ function shareFoundation() {
         .then(() => console.log('Shared successfully'))
         .catch((error) => {
             console.log('Error sharing or cancelled:', error);
-            // If native share fails, show custom modal
             showCustomShareModal(url, title, text);
         });
     } else {
-        // Show custom modal for desktop
         showCustomShareModal(url, title, text);
     }
 }
 
 function showCustomShareModal(url, title, text) {
-    console.log('Opening custom share modal'); // Debug log
+    console.log('Opening custom share modal');
     
-    // Remove any existing modal first
     const existingModal = document.querySelector('.share-modal');
     if (existingModal) {
         existingModal.remove();
     }
     
-    // Create share modal
     const shareModal = document.createElement('div');
     shareModal.className = 'share-modal';
-    shareModal.style.display = 'flex'; // Ensure it's visible
+    shareModal.style.display = 'flex';
     shareModal.innerHTML = `
         <div class="share-modal-content">
             <div class="share-modal-header">
@@ -560,14 +503,11 @@ function showCustomShareModal(url, title, text) {
         </div>
     `;
     
-    // Append to body
     document.body.appendChild(shareModal);
-    console.log('Modal added to body'); // Debug log
+    console.log('Modal added to body');
     
-    // Force reflow to ensure CSS animations work
     shareModal.offsetHeight;
     
-    // Add event listeners for close button
     const closeBtn = shareModal.querySelector('.share-modal-close');
     if (closeBtn) {
         closeBtn.addEventListener('click', function(e) {
@@ -578,7 +518,6 @@ function showCustomShareModal(url, title, text) {
         });
     }
     
-    // Close modal when clicking on backdrop
     shareModal.addEventListener('click', function(e) {
         if (e.target === shareModal) {
             console.log('Backdrop clicked');
@@ -586,21 +525,19 @@ function showCustomShareModal(url, title, text) {
         }
     });
     
-    // Add click handlers to all share buttons
     const shareButtons = shareModal.querySelectorAll('.share-option');
-    console.log('Found share buttons:', shareButtons.length); // Debug log
+    console.log('Found share buttons:', shareButtons.length);
     
     shareButtons.forEach((button, index) => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             const platform = this.getAttribute('data-platform');
-            console.log('Share platform clicked:', platform); // Debug log
+            console.log('Share platform clicked:', platform);
             shareVia(platform, url, title, text, shareModal);
         });
     });
     
-    // Close on Escape key
     const escapeHandler = function(e) {
         if (e.key === 'Escape') {
             shareModal.remove();
@@ -611,7 +548,7 @@ function showCustomShareModal(url, title, text) {
 }
 
 function shareVia(platform, url, title, text, modal) {
-    console.log('Sharing via:', platform); // Debug log
+    console.log('Sharing via:', platform);
     let shareUrl = '';
     
     switch(platform) {
@@ -619,7 +556,6 @@ function shareVia(platform, url, title, text, modal) {
             shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
             break;
         case 'instagram':
-            // Instagram doesn't have direct URL sharing, so copy link and notify user
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(url)
                     .then(() => {
@@ -648,45 +584,36 @@ function shareVia(platform, url, title, text, modal) {
     }
     
     if (shareUrl) {
-        console.log('Opening share URL:', shareUrl); // Debug log
-        // Open in new window/tab
+        console.log('Opening share URL:', shareUrl);
         const shareWindow = window.open(shareUrl, '_blank', 'width=600,height=500,scrollbars=yes,resizable=yes');
         
-        // Check if popup was blocked
         if (!shareWindow || shareWindow.closed || typeof shareWindow.closed === 'undefined') {
             console.log('Popup blocked, trying direct link');
-            // Popup blocked, try direct navigation in new tab
             window.open(shareUrl, '_blank');
         }
         
-        // Close modal after short delay
         setTimeout(() => {
             if (modal) modal.remove();
         }, 300);
     }
 }
 
-// ===== INITIALIZATION =====
 function initializeSite() {
-    // Update copyright year
     const yearElement = document.querySelector('.copyright-modern p');
     if (yearElement) {
         const currentYear = new Date().getFullYear();
         yearElement.textContent = yearElement.textContent.replace('2026', currentYear);
     }
     
-    // Check if there's a hash in URL and show corresponding page
     const hash = window.location.hash.substring(1);
     const validPages = ['home', 'about', 'objectives', 'team', 'projects', 'survey', 'blog', 'contact'];
     if (hash && validPages.includes(hash) && document.getElementById(hash)) {
-        // Wait a bit for DOM to be ready
         setTimeout(() => {
             const navLink = document.querySelector(`.nav-link[onclick*="${hash}"]`);
             showPage(hash, navLink);
         }, 100);
     }
     
-    // Set up all features (call only if functions are defined)
     if (typeof setupFormSuccessAlert === 'function') setupFormSuccessAlert();
     if (typeof setupForms === 'function') setupForms();
     if (typeof setupMobileMenu === 'function') setupMobileMenu();
@@ -695,10 +622,8 @@ function initializeSite() {
     if (typeof setupPhotoChooser === 'function') setupPhotoChooser();
     if (typeof setupGalleryFilters === 'function') setupGalleryFilters();
     
-    // Setup QR code generation with retry mechanism
     setTimeout(() => setupQRCodeGeneration(0), 200);
     
-    // Add loading animation to cards
     setTimeout(() => {
         const cards = document.querySelectorAll('.card, .quick-nav-card, .team-member-card, .objective-card');
         cards.forEach((card, index) => {
@@ -707,7 +632,6 @@ function initializeSite() {
     }, 300);
 }
 
-// Handle browser back/forward buttons
 window.addEventListener('popstate', function(event) {
     const hash = window.location.hash.substring(1);
     const validPages = ['home', 'about', 'objectives', 'team', 'projects', 'survey', 'blog', 'contact'];
@@ -717,16 +641,12 @@ window.addEventListener('popstate', function(event) {
     }
 });
 
-// ===== START EVERYTHING =====
-// Wait for DOM to be fully loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeSite);
 } else {
-    // DOM already loaded
     initializeSite();
 }
 
-// Add CSS for generated QR codes (injected dynamically)
 const qrStyles = `
     .generated-qrcode {
         margin: 0 auto 15px;
@@ -798,7 +718,6 @@ const qrStyles = `
     }
 `;
 
-// Inject QR code styles
 const styleSheet = document.createElement("style");
 styleSheet.type = "text/css";
 styleSheet.innerText = qrStyles;

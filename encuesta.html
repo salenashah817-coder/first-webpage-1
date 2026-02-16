@@ -8,12 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="./image/logo.jpg" type="image/jpeg">
     
-    <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
-            // Initialize EmailJS with your public key
-            // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
             emailjs.init('YOUR_PUBLIC_KEY');
         })();
     </script>
@@ -35,10 +32,6 @@
         </div>
 
         <div style="margin-top: 20px;">
-            <!-- 
-                BACKEND EMAIL SETUP - Sends emails directly using your own server
-                No third-party services needed!
-            -->
             <form name="encuesta-apicultura" 
                   id="encuesta-form"
                   method="POST" 

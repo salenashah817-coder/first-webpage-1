@@ -520,7 +520,6 @@ main {
     transition: var(--transition);
 }
 
-/* Don't crop juan.png - show full image */
 img[src*="juan.png"] {
     object-fit: contain !important;
 }
