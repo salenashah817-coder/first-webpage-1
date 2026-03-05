@@ -498,6 +498,32 @@ main {
     gap: 1.5rem;
 }
 
+/* Keep Patronato members in role-priority order across breakpoints */
+.gallery-grid .role-president,
+.team-grid .role-president {
+    order: 3;
+}
+
+.gallery-grid .role-secretary,
+.team-grid .role-secretary {
+    order: 4;
+}
+
+.gallery-grid .role-treasurer,
+.team-grid .role-treasurer {
+    order: 1;
+}
+
+.gallery-grid .role-vocal-1,
+.team-grid .role-vocal-1 {
+    order: 2;
+}
+
+.gallery-grid .role-vocal-2,
+.team-grid .role-vocal-2 {
+    order: 5;
+}
+
 .gallery-item {
     border-radius: var(--radius);
     overflow: hidden;
@@ -2318,6 +2344,12 @@ select.form-control {
     
     .gallery-img {
         height: 150px;
+    }
+
+    .gallery-img.no-crop-mobile {
+        object-fit: contain;
+        object-position: top center;
+        background-color: var(--white);
     }
 
     .gallery-grid-full {

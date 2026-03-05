@@ -1,3 +1,5 @@
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfO1hLo_srOOrOENhTlBI1fJf_xQCjeb_5oHYvgcSywQmHtiQ/viewform?usp=dialog';
+
 function setupForms() {
     const contactForm = document.querySelector('.contact-form');
     
@@ -220,8 +222,7 @@ function setupQRCodeGeneration(retryCount = 0) {
     console.log('setupQRCodeGeneration called, retry count:', retryCount);
     console.log('QRCode available?', typeof QRCode !== 'undefined');
     
-    const baseUrl = window.location.origin + window.location.pathname.replace('index.html', '');
-    const surveyUrl = baseUrl + 'encuesta.html';
+    const surveyUrl = GOOGLE_FORM_URL;
     
     const surveyQRData = {
         survey1: {
@@ -369,8 +370,7 @@ function downloadQRCode(qrElementId, url, title) {
 }
 
 function showQRCodeFallback() {
-    const baseUrl = window.location.origin + window.location.pathname.replace('index.html', '');
-    const surveyUrl = baseUrl + 'encuesta.html';
+    const surveyUrl = GOOGLE_FORM_URL;
     
     const qrContainers = document.querySelectorAll('.qr-code-placeholder, #qr-survey1, #qr-survey2');
     

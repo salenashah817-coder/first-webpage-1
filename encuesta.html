@@ -7,13 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="./image/logo.jpg" type="image/jpeg">
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init('YOUR_PUBLIC_KEY');
-        })();
-    </script>
 </head>
 <body>
     <header class="header">
@@ -27,100 +20,203 @@
 
     <main class="container" style="padding: 40px 20px; max-width: 900px; margin: 0 auto;">
         <div class="section-header">
-            <h2>Encuesta sobre Apicultura</h2>
-            <p class="section-subtitle">Responde las 10 preguntas para ayudarnos a mejorar el sitio y la labor de la Fundacion.</p>
+            <h2>FORMULARIO APICULTURA</h2>
+            <p class="section-subtitle">Plan de Salvaguarda y Rescate de la Apicultura</p>
         </div>
 
         <div style="margin-top: 20px;">
-            <form name="encuesta-apicultura" 
+            <div class="survey-card" style="margin-bottom: 30px;">
+                <div class="survey-card-content" style="padding: 24px;">
+                    <p>
+                        Hola. Como sabes, la apicultura es vital para la produccion de alimentos, la biodiversidad y la salud de nuestros ecosistemas,
+                        y se encuentra en una situacion critica. Asi se reconoce en el Real Decreto 199/2025, de 11 de marzo (BOE 13/03/2025),
+                        por el que se declara la apicultura en Espana como Manifestacion Representativa del Patrimonio Cultural Inmaterial.
+                    </p>
+                    <p>
+                        Nuestro objetivo es elaborar un Plan de Salvaguarda que permita su recuperacion, impulsando su transmision, difusion,
+                        investigacion, viabilidad y desarrollo. Tu perspectiva es muy valiosa, ya seas apicultor/a, agricultor/a, consumidor/a,
+                        envasador/a, restaurador/a, investigador/a, profesor/a o alumno/a.
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        <strong>Los datos son anonimos.</strong> Responder te costara solo unos minutos. Gracias por tu colaboracion.
+                    </p>
+                </div>
+            </div>
+
+            <form name="encuesta-apicultura"
                   id="encuesta-form"
-                  method="POST" 
+                  method="POST"
+                  data-netlify="true"
+                  netlify
                   class="survey-form">
                 <input type="hidden" name="form-name" value="encuesta-apicultura">
-                
+
+                <h3 style="margin: 12px 0 16px; color: #2c3e50;">Datos generales</h3>
+
                 <div class="form-group">
-                    <label>1. Como fue tu experiencia visitando nuestro sitio web?*</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_experience_1" name="q_experience" value="excellent" required style="margin-right:8px;"> Excelente</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_experience_2" name="q_experience" value="good" style="margin-right:8px;"> Buena</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_experience_3" name="q_experience" value="fair" style="margin-right:8px;"> Aceptable</label>
-                    <label style="display:flex; align-items:center;"><input type="radio" id="q_experience_4" name="q_experience" value="poor" style="margin-right:8px;"> Necesita mejorar</label>
+                    <label for="comunidad">Comunidad autonoma*</label>
+                    <input type="text" id="comunidad" name="comunidad_autonoma" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <label>2. Cuales de estas secciones visitaste? (puedes seleccionar varias)*</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_1" name="q_sections" value="about" style="margin-right:8px;"> Quienes Somos</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_2" name="q_sections" value="projects" style="margin-right:8px;"> Proyectos</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_3" name="q_sections" value="gallery" style="margin-right:8px;"> Galeria</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_4" name="q_sections" value="team" style="margin-right:8px;"> Patronato</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_sections_5" name="q_sections" value="objectives" style="margin-right:8px;"> Fines y Actividades</label>
-                    <label style="display:flex; align-items:center;"><input type="checkbox" id="q_sections_6" name="q_sections" value="blog" style="margin-right:8px;"> Blog</label>
+                    <label for="municipio">Municipio*</label>
+                    <input type="text" id="municipio" name="municipio" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="q_reason">3. Que te llevo a visitar nuestro sitio web? (respuesta breve)</label>
-                    <input type="text" id="q_reason" name="q_reason" class="form-control" placeholder="Ej.: aprender sobre apicultura, conocer la fundacion, participar...">
+                    <label>Sexo*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" name="sexo" value="Mujer" required style="margin-right:8px;"> Mujer</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" name="sexo" value="Hombre" style="margin-right:8px;"> Hombre</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" name="sexo" value="No binario" style="margin-right:8px;"> No binario</label>
+                    <label style="display:flex; align-items:center;"><input type="radio" name="sexo" value="Prefiero no decirlo" style="margin-right:8px;"> Prefiero no decirlo</label>
                 </div>
 
                 <div class="form-group">
-                    <label>4. Que tipo de contenido te gustaria ver mas? (puedes seleccionar varias)*</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_content_1" name="q_content" value="articles" style="margin-right:8px;"> Articulos cientificos</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_content_2" name="q_content" value="videos" style="margin-right:8px;"> Videos educativos</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_content_3" name="q_content" value="events" style="margin-right:8px;"> Eventos y talleres</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" id="q_content_4" name="q_content" value="news" style="margin-right:8px;"> Noticias y actualizaciones</label>
-                    <label style="display:flex; align-items:center;"><input type="checkbox" id="q_content_5" name="q_content" value="research" style="margin-right:8px;"> Investigaciones</label>
+                    <label for="edad">Edad*</label>
+                    <input type="number" id="edad" name="edad" min="16" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                    <label>5. Que tan facil fue navegar por el sitio?*</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_navigation_1" name="q_navigation" value="very_easy" required style="margin-right:8px;"> Muy facil</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_navigation_2" name="q_navigation" value="easy" style="margin-right:8px;"> Facil</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_navigation_3" name="q_navigation" value="difficult" style="margin-right:8px;"> Dificil</label>
-                    <label style="display:flex; align-items:center;"><input type="radio" id="q_navigation_4" name="q_navigation" value="very_difficult" style="margin-right:8px;"> Muy dificil</label>
+                    <label for="profesion">Profesion*</label>
+                    <input type="text" id="profesion" name="profesion" class="form-control" required>
+                </div>
+
+                <h3 style="margin: 28px 0 16px; color: #2c3e50;">Seccion 1: Tu Relacion con las Abejas</h3>
+
+                <div class="form-group">
+                    <label>1. Cual de las siguientes opciones describe mejor tu relacion con la apicultura?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="relacion_apicultura" value="Soy apicultor/a profesional" class="apicultor-trigger" style="margin-right:8px;"> Soy apicultor/a profesional</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="relacion_apicultura" value="Soy apicultor/a aficionado/a" class="apicultor-trigger" style="margin-right:8px;"> Soy apicultor/a aficionado/a</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="relacion_apicultura" value="He practicado la apicultura en el pasado" class="apicultor-trigger" style="margin-right:8px;"> He practicado la apicultura en el pasado, pero ya no</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="relacion_apicultura" value="Me estoy formando para iniciarme" style="margin-right:8px;"> Tengo gran interes y me estoy formando o planteando iniciarme</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="relacion_apicultura" value="No soy apicultor/a, pero me interesan las abejas" style="margin-right:8px;"> No soy apicultor/a, pero me interesan mucho las abejas y su bienestar</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="relacion_apicultura" value="Consumidor de productos de la colmena" style="margin-right:8px;"> Soy consumidor y utilizo productos de la colmena</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="relacion_apicultura" value="Uso profesional de productos de la colmena" style="margin-right:8px;"> Soy restaurador/agricultor/envasador/industrial y utilizo productos de la colmena</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="relacion_apicultura" value="Docencia o investigacion" style="margin-right:8px;"> Soy profesor/a, investigador/a o alumno/a de un centro donde se estudia la apicultura</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="relacion_apicultura" value="Museo o asociacion" style="margin-right:8px;"> Museo, asociacion o similar donde se estudia la actividad apicola</label>
+                    <label style="display:flex; align-items:center;"><input type="checkbox" name="relacion_apicultura" value="Interes personal" style="margin-right:8px;"> Me interesa a nivel personal</label>
+                </div>
+
+                <div id="seccion-apicultor" style="display:none; border-top: 2px solid #f1c40f; margin-top: 28px; padding-top: 22px;">
+                    <h3 style="margin-bottom: 16px; color: #2c3e50;">Seccion 2: Experiencia como Apicultor/a</h3>
+
+                    <div class="form-group">
+                        <label>2. Como te iniciaste en el mundo de la apicultura?</label>
+                        <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="inicio_apicultura" value="Tradicion familiar" style="margin-right:8px;"> Tradicion familiar</label>
+                        <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="inicio_apicultura" value="Curso de formacion" style="margin-right:8px;"> Curso de formacion</label>
+                        <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="inicio_apicultura" value="Iniciativa propia" style="margin-right:8px;"> Iniciativa propia</label>
+                        <label style="display:flex; align-items:center;"><input type="checkbox" name="inicio_apicultura" value="Otros" style="margin-right:8px;"> Otros</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="q3_colmenas">3. Cuantas colmenas posees actualmente y de que tipo son?</label>
+                        <input type="text" id="q3_colmenas" name="q3_colmenas" class="form-control" placeholder="Ejemplo: 15 colmenas Langstroth, 8 Layens y 2 Dadant">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de colmenas (puedes elegir varias):</label>
+                        <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="tipo_colmenas" value="Fijistas" style="margin-right:8px;"> Fijistas (troncos, corchos, otras)</label>
+                        <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="tipo_colmenas" value="Movilistas horizontales" style="margin-right:8px;"> Movilistas horizontales (Layens y similares)</label>
+                        <label style="display:flex; align-items:center;"><input type="checkbox" name="tipo_colmenas" value="Movilistas verticales" style="margin-right:8px;"> Movilistas verticales (Langstroth, Dadant y similares)</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>4. De tus vivencias como apicultor/a, cual ha sido la experiencia mas especial o memorable?</label>
+                        <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="vivencias" value="Recogida de enjambres" style="margin-right:8px;"> Recogida de enjambres</label>
+                        <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="vivencias" value="Traslado de colmenas" style="margin-right:8px;"> Traslado de colmenas</label>
+                        <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="vivencias" value="Cosecha especial" style="margin-right:8px;"> Cosecha especial</label>
+                        <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="vivencias" value="Biologia y comportamiento" style="margin-right:8px;"> Biologia de las abejas y comportamiento</label>
+                        <label style="display:flex; align-items:center;"><input type="checkbox" name="vivencias" value="Otras" style="margin-right:8px;"> Otras situaciones</label>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label>6. Encontraste la informacion que buscabas?*</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_found_info_1" name="q_found_info" value="yes" required style="margin-right:8px;"> Si, completamente</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_found_info_2" name="q_found_info" value="partial" style="margin-right:8px;"> Parcialmente</label>
-                    <label style="display:flex; align-items:center;"><input type="radio" id="q_found_info_3" name="q_found_info" value="no" style="margin-right:8px;"> No</label>
+                    <label for="q5">5. Conoces algun manejo, herramienta, vocabulario o metodologia que se haya perdido o que se practique solo en tu zona?</label>
+                    <textarea id="q5" name="q5_perdidas" rows="3" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="q_impression">7. Cual fue tu impresion general sobre la Fundacion? (respuesta breve)</label>
-                    <textarea id="q_impression" name="q_impression" rows="2" class="form-control" placeholder="Cuentanos tu perspectiva..."></textarea>
+                    <label>6. Que riesgos y retos consideras mas importantes para la salvaguarda de la apicultura?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q6_riesgos" value="Cambio climatico" required style="margin-right:8px;"> Cambio climatico</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q6_riesgos" value="Abandono rural y relevo generacional" style="margin-right:8px;"> Abandono del medio rural, perdida de conocimientos y relevo generacional</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q6_riesgos" value="Crisis de mercado" style="margin-right:8px;"> Crisis de mercado (precios ruinosos, competencia desleal, importaciones fraudulentas)</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q6_riesgos" value="Toxicos y plaguicidas" style="margin-right:8px;"> Toxicos ambientales y plaguicidas</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q6_riesgos" value="Problemas sanitarios" style="margin-right:8px;"> Problemas sanitarios (varroa y otras patologias)</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q6_riesgos" value="Especies invasoras" style="margin-right:8px;"> Especies invasoras amenazantes (Vespa velutina, orientalis, soror)</label>
+                    <label style="display:flex; align-items:center;"><input type="checkbox" name="q6_riesgos" value="Otras situaciones" style="margin-right:8px;"> Otras situaciones</label>
                 </div>
 
                 <div class="form-group">
-                    <label>8. Volverias a visitar nuestro sitio en el futuro?*</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_return_1" name="q_return" value="definitely" required style="margin-right:8px;"> Definitivamente si</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_return_2" name="q_return" value="probably" style="margin-right:8px;"> Probablemente</label>
-                    <label style="display:flex; align-items:center;"><input type="radio" id="q_return_3" name="q_return" value="unlikely" style="margin-right:8px;"> Poco probable</label>
+                    <label>7. Cuales son las ventajas y beneficios de la practica de la apicultura en el territorio?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q7_beneficios" value="Beneficios ecosistemicos" required style="margin-right:8px;"> Beneficios ecosistemicos para polinizacion y biodiversidad</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q7_beneficios" value="Deteccion de cambios climaticos" style="margin-right:8px;"> Deteccion de modificaciones por cambio climatico</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q7_beneficios" value="Conocimiento tradicional" style="margin-right:8px;"> Conocimiento tradicional de floracion, clima y abejas</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q7_beneficios" value="Beneficio economico" style="margin-right:8px;"> Beneficio economico por incremento de productividad y calidad</label>
+                    <label style="display:flex; align-items:center;"><input type="checkbox" name="q7_beneficios" value="Otras situaciones" style="margin-right:8px;"> Otras situaciones</label>
                 </div>
 
                 <div class="form-group">
-                    <label>9. Que aspecto de la apicultura te interesa mas?*</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_interest_1" name="q_interest" value="conservation" required style="margin-right:8px;"> Conservacion y biodiversidad</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_interest_2" name="q_interest" value="science" style="margin-right:8px;"> Investigacion cientifica</label>
-                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" id="q_interest_3" name="q_interest" value="practice" style="margin-right:8px;"> Practica y tecnicas</label>
-                    <label style="display:flex; align-items:center;"><input type="radio" id="q_interest_4" name="q_interest" value="culture" style="margin-right:8px;"> Patrimonio cultural</label>
+                    <label>8. Como se podria proteger la practica de la apicultura de forma directa en el territorio?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q8_proteccion" value="Marco legal protector" required style="margin-right:8px;"> Creacion de un marco legal protector de la apicultura y las abejas</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q8_proteccion" value="Investigacion cientifica" style="margin-right:8px;"> Apoyo a la investigacion cientifica (sanidad, plaguicidas y Apis mellifera iberiensis)</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q8_proteccion" value="Apiarios experimentales" style="margin-right:8px;"> Instalacion y mantenimiento de apiarios experimentales</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q8_proteccion" value="Divulgacion ciudadana" style="margin-right:8px;"> Actividades de divulgacion y concienciacion ciudadana</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="checkbox" name="q8_proteccion" value="Formacion" style="margin-right:8px;"> Actividades de formacion</label>
+                    <label style="display:flex; align-items:center;"><input type="checkbox" name="q8_proteccion" value="Otras situaciones" style="margin-right:8px;"> Otras situaciones</label>
                 </div>
 
                 <div class="form-group">
-                    <label for="q_improve">10. Hay algo que podriamos mejorar en el sitio? (respuesta breve)</label>
-                    <textarea id="q_improve" name="q_improve" rows="2" class="form-control" placeholder="Sugerencias, comentarios..."></textarea>
+                    <label>9. Valora del 1 al 5 los siguientes aspectos para la salvaguarda de la apicultura*</label>
+                    <label for="q9_bienes">Bienes muebles e inmuebles asociados</label>
+                    <select id="q9_bienes" name="q9_bienes" class="form-control" required>
+                        <option value="">Selecciona</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                    </select>
+                    <label for="q9_tradicionales" style="margin-top:10px;">Conocimientos tradicionales vinculados al oficio</label>
+                    <select id="q9_tradicionales" name="q9_tradicionales" class="form-control" required>
+                        <option value="">Selecciona</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                    </select>
+                    <label for="q9_entorno" style="margin-top:10px;">Conocimientos relativos al entorno natural y paisaje</label>
+                    <select id="q9_entorno" name="q9_entorno" class="form-control" required>
+                        <option value="">Selecciona</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                    </select>
+                    <label for="q9_otros" style="margin-top:10px;">Otros</label>
+                    <select id="q9_otros" name="q9_otros" class="form-control" required>
+                        <option value="">Selecciona</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                    </select>
                 </div>
 
-                <div class="form-group" style="border-top: 2px solid #f1c40f; padding-top: 20px; margin-top: 20px;">
-                    <label for="respondent_email">Tu correo electrónico (opcional)</label>
-                    <input type="email" id="respondent_email" name="respondent_email" class="form-control" placeholder="correo@ejemplo.com">
+                <div class="form-group">
+                    <label>10. En tu opinion, crees que la formacion actual de los apicultores es suficiente?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" name="q10_formacion" value="Si" required style="margin-right:8px;"> Si</label>
+                    <label style="display:flex; align-items:center;"><input type="radio" name="q10_formacion" value="No" style="margin-right:8px;"> No</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="q11_evento">11. Cual es el encuentro, fiesta o feria mas importante relacionado con la apicultura para ti? (indica lugar y fecha)</label>
+                    <textarea id="q11_evento" name="q11_evento" rows="2" class="form-control"></textarea>
+                </div>
+
+                <h3 style="margin: 28px 0 16px; color: #2c3e50;">Seccion 3: Unete a la Causa</h3>
+
+                <div class="form-group">
+                    <label>12. Te gustaria participar o recibir informacion sobre esta iniciativa?*</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" name="q12_participacion" value="Participar" required style="margin-right:8px;"> Si, me gustaria participar en esta iniciativa</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" name="q12_participacion" value="Recibir informacion" style="margin-right:8px;"> Si, me gustaria recibir informacion sobre los avances del plan</label>
+                    <label style="display:flex; align-items:center; margin-bottom:8px;"><input type="radio" name="q12_participacion" value="Apoyo sin participar" style="margin-right:8px;"> No, gracias, pero apoyo la iniciativa</label>
+                    <label style="display:flex; align-items:center;"><input type="radio" name="q12_participacion" value="No interesado" style="margin-right:8px;"> No estoy interesado/a</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="q13_email">13. Si respondiste afirmativamente, dejanos tu correo electronico para contactarte</label>
+                    <input type="email" id="q13_email" name="q13_email" class="form-control" placeholder="correo@ejemplo.com">
                     <small style="color: #666; font-size: 0.85rem;">
-                        <i class="fas fa-info-circle"></i> Solo si deseas que te contactemos sobre tus respuestas
+                        <i class="fas fa-info-circle"></i> Tu correo se usara exclusivamente para informarte sobre esta iniciativa y no sera compartido con terceros.
                     </small>
                 </div>
 
                 <div class="form-group">
-                    <label for="respondent_name">Tu nombre (opcional)</label>
-                    <input type="text" id="respondent_name" name="respondent_name" class="form-control" placeholder="Nombre y apellidos">
+                    <label for="q14_comentarios">14. Hay algo mas que quieras anadir o algun comentario que te gustaria compartir?</label>
+                    <textarea id="q14_comentarios" name="q14_comentarios" rows="3" class="form-control"></textarea>
                 </div>
 
                 <div style="text-align: center; margin-top: 16px;">
@@ -133,6 +229,22 @@
     </main>
 
     <script src="app.js"></script>
-    <script src="encuesta-emailjs.js"></script>
+    <script>
+        (function() {
+            const triggers = document.querySelectorAll('.apicultor-trigger');
+            const section = document.getElementById('seccion-apicultor');
+
+            function toggleApicultorSection() {
+                const show = Array.from(triggers).some(input => input.checked);
+                section.style.display = show ? 'block' : 'none';
+            }
+
+            triggers.forEach(input => {
+                input.addEventListener('change', toggleApicultorSection);
+            });
+
+            toggleApicultorSection();
+        })();
+    </script>
 </body>
 </html>
