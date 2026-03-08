@@ -1,6 +1,8 @@
-# Fundación Dapena | Fundación Juan José Iglesias Dapena
+# Fundacion Juan Jose Iglesias Dapena (Fundacion Dapena)
 
-**Sitio web oficial**: [https://fundacionjjid.org](https://fundacionjjid.org)
+Sitio web oficial de la Fundacion: [https://fundacionjjid.org](https://fundacionjjid.org)
+
+Este repositorio contiene el contenido institucional de la web publica de la Fundacion.
 
 ## Acerca de la Fundación Dapena
 
