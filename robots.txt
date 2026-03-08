@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /image/main.jpg
+Disallow: /image/side-img.jpg
 
 Sitemap: https://fundacionjjid.org/sitemap.xml
