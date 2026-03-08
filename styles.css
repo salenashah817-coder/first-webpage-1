@@ -546,7 +546,7 @@ main {
     transition: var(--transition);
 }
 
-img[src*="juan.png"] {
+img[src*="juan.jpg"] {
     object-fit: contain !important;
 }
 
