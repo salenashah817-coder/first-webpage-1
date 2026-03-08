@@ -2002,6 +2002,39 @@ select.form-control {
     text-align: center;
 }
 
+.privacy-notice {
+    margin: 1rem 0 0.75rem;
+    padding: 0.85rem 1rem;
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-sm);
+    background-color: #fff8db;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.privacy-notice a {
+    color: var(--secondary);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.consent-group {
+    margin-top: 0.5rem;
+}
+
+.consent-label {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-weight: 500 !important;
+    line-height: 1.45;
+}
+
+.consent-label input[type='checkbox'] {
+    margin-top: 0.2rem;
+    transform: scale(1.15);
+}
+
 .form-note {
     font-size: 0.9rem;
     color: var(--text-light);
