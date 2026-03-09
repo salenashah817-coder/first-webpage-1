@@ -975,6 +975,14 @@ img[src*="juan.jpg"] {
     font-size: 0.9rem;
 }
 
+.policy-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
 .about-section {
     margin-bottom: 3rem;
 }
