@@ -225,27 +225,26 @@ main {
 
 .hero-images {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: center;
     width: 100%;
-    flex-wrap: nowrap;
 }
 
-.hero-img-left,
-.hero-img-main,
-.hero-img-right {
-    height: 550px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-}
-
-.hero-img-left,
-.hero-img-right {
-    flex-shrink: 1;
+.hero-side {
+    flex: 1;
+    background-image: url('./image/side-img.jpg');
+    background-size: cover;
+    background-position: center;
+    min-width: 80px;
 }
 
 .hero-img-main {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 580px;
+    max-width: 65%;
+    object-fit: contain;
     flex-shrink: 0;
 }
 
@@ -974,14 +973,6 @@ img[src*="juan.jpg"] {
 .modern-btn.small {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
-}
-
-.policy-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
 }
 
 .about-section {
@@ -2308,14 +2299,13 @@ select.form-control {
         padding-top: 1rem;
     }
 
-    .hero-img-left,
-    .hero-img-right {
+    .hero-side {
         display: none;
     }
 
     .hero-img-main {
         height: auto;
-        width: auto;
+        width: 100%;
         max-width: 100%;
         object-fit: contain;
         display: block;
@@ -2440,12 +2430,6 @@ select.form-control {
         width: 100%;
         max-width: 300px;
         justify-content: center;
-    }
-
-    .policy-actions {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.65rem;
     }
     
     .footer-content {
