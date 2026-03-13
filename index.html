@@ -173,7 +173,7 @@
         <style>
             .page { display: block !important; }
             .page:not(#home) { display: none !important; }
-            .mobile-menu-btn { display: none !important; }
+            .mnu-btn { display: none !important; }
         </style>
         <p class="nojs-warning">JavaScript está deshabilitado. Algunas funciones pueden no estar disponibles.</p>
     </noscript>
@@ -749,24 +749,23 @@
                     <span>Encuesta Principal</span>
                 </div>
                 <h3>10 Preguntas sobre Apicultura</h3>
-                <p class="survey-subtitle">Completa nuestra encuesta detallada</p>
+                <p class="survey-subtitle">Escanea el código QR o haz clic en el botón para responder la encuesta</p>
             </div>
 
-            <div class="survey-card-content" style="text-align: center; padding: 40px 20px;">
-                <div id="qr-survey1" style="margin: 0 auto 25px; max-width: 250px;">
+            <div class="survey-card-content" style="text-align: center; padding: 30px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div id="qr-encuesta" style="margin: 0 auto 25px;">
                     <div class="qr-code-placeholder">
                         <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #f1c40f;"></i>
                         <p>Generando código QR...</p>
                     </div>
                 </div>
-                
-                <p style="margin-bottom: 18px; font-size: 1.1rem;">
-                    Escanea el código QR o haz clic en el botón para responder la encuesta.
-                </p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfO1hLo_srOOrOENhTlBI1fJf_xQCjeb_5oHYvgcSywQmHtiQ/viewform?usp=dialog" class="modern-btn" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; font-size: 1.1rem; text-decoration: none;">
-                    <i class="fas fa-external-link-alt"></i> Ir al Google Form
-                </a>
-                
+
+                <div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfO1hLo_srOOrOENhTlBI1fJf_xQCjeb_5oHYvgcSywQmHtiQ/viewform?usp=dialog" class="modern-btn" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; font-size: 1.1rem; text-decoration: none;">
+                        <i class="fas fa-external-link-alt"></i> Ir al Google Form
+                    </a>
+                </div>
+
                 <p style="margin-top: 16px; color: #666; font-size: 0.9rem;">
                     <i class="fas fa-clock"></i> Tiempo estimado: 5-7 minutos
                 </p>

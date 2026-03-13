@@ -240,11 +240,11 @@ function setupQRCodeGeneration(retryCount = 0) {
     if (typeof QRCode !== 'undefined' && QRCode) {
         console.log('QRCode library loaded successfully! Generating QR codes...');
         try {
-            const qrContainers = document.querySelectorAll('.qr-code-placeholder, #qr-survey1, #qr-survey2');
+            const qrContainers = document.querySelectorAll('.qr-code-placeholder, #qr-survey1, #qr-survey2, #qr-encuesta');
             console.log('Found QR containers:', qrContainers.length);
             
             if (qrContainers.length === 0) {
-                console.warn('No QR code containers found in the page. Looking for containers with class .qr-code-placeholder or IDs #qr-survey1, #qr-survey2');
+                console.warn('No QR code containers found in the page. Looking for containers with class .qr-code-placeholder or IDs #qr-survey1, #qr-survey2, #qr-encuesta');
                 return;
             }
             
@@ -253,7 +253,7 @@ function setupQRCodeGeneration(retryCount = 0) {
                 const containerId = container.id || '';
                 const containerText = container.textContent.toLowerCase();
                 
-                if (containerId === 'qr-survey1' || containerId === 'qr-survey2' || containerText.includes('encuesta') || index === 0) {
+                if (containerId === 'qr-survey1' || containerId === 'qr-survey2' || containerId === 'qr-encuesta' || containerText.includes('encuesta') || index === 0) {
                     surveyKey = 'survey1';
                 } else {
                     surveyKey = 'mainSite';
