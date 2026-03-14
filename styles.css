@@ -1690,6 +1690,16 @@ img[src*="juan.jpg"] {
 
 }
 
+.generated-qrcode {
+    margin: 0 auto;
+}
+
+.generated-qrcode img,
+.generated-qrcode canvas {
+    display: block;
+    margin: 0 auto;
+}
+
 .qr-code-placeholder i {
     font-size: 4rem;
     color: var(--primary);
@@ -2083,11 +2093,12 @@ select.form-control {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    gap: 3rem;
     margin-bottom: 2.5rem;
     position: relative;
     z-index: 1;
+    align-items: start;
 }
 
 .footer-logo-modern {
@@ -2137,10 +2148,13 @@ select.form-control {
 .footer-links-modern {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
 }
 
 .footer-links-modern li {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0;
 }
 
 .footer-links-modern a {
@@ -2443,6 +2457,10 @@ select.form-control {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .footer-links-modern {
+        grid-template-columns: 1fr 1fr;
     }
     
     .instructions-steps {

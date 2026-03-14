@@ -1,4 +1,4 @@
-const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfO1hLo_srOOrOENhTlBI1fJf_xQCjeb_5oHYvgcSywQmHtiQ/viewform?usp=dialog';
+const GOOGLE_FORM_URL = 'https://forms.gle/aochbVnRG3tHjU4t7';
 
 function setupForms() {
     const contactForm = document.querySelector('.contact-form');
