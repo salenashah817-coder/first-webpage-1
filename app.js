@@ -164,6 +164,8 @@ function showPage(pageId, element) {
     const navLinksContainer = document.getElementById('navLinks');
     if (navLinksContainer && navLinksContainer.classList.contains('active')) {
         navLinksContainer.classList.remove('active');
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        if (mobileBtn) mobileBtn.classList.remove('active');
     }
     
     window.scrollTo({ top: 0, behavior: 'smooth' });

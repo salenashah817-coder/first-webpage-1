@@ -97,15 +97,18 @@ strong {
 .header {
     background-color: var(--white);
     box-shadow: var(--shadow);
+    position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 3px solid var(--primary);
+    overflow: visible;
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo-container {
